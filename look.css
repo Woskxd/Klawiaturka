@@ -1,0 +1,186 @@
+body {
+    margin: 0;
+}
+
+#container {
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(245,233,208,1) 0%, rgba(226,209,185,1) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-family: 'Roboto', sans-serif;
+}
+
+#black-white {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: #e0c8a5;
+    padding: 10px;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    display: flex;
+    align-items: center;
+}
+
+#black {
+    width: 20px;
+    height: 20px;
+    background: black;
+    border-radius: 50%;
+    margin: 2px;
+}
+
+#white {
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 50%;
+    margin: 2px;
+}
+
+#keyboard {
+    background: #e0e0e0;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 882px;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 0px 3px #b3b3b3;
+}
+
+#signature {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.button {
+    width: 38px;
+    height: 38px;
+    background: #fafafa;
+    border-radius: 5px;
+    margin: 5px;
+    text-align: center;
+    padding: 3px;
+    padding-top: 10px;
+    box-shadow: 0px 3px 0px 5px #bbbbbbd1;
+    font-size: smaller;
+    box-sizing: border-box;
+    font-weight: 500;
+    position: relative;
+    user-select: none;
+    animation: rainbow_inside 10s linear;
+    animation-iteration-count: infinite;
+}
+
+.button:hover, #black:hover, #white:hover {
+    cursor: pointer;
+}
+
+.button::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 43px;
+    border-radius: 5px;
+    animation: rainbow_outside 10s linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes rainbow_outside{
+    100%,0%{
+        box-shadow: 0px 0px 5px  rgb(255,0,0);
+    }
+    8%{
+        box-shadow: 0px 0px 5px  rgb(255,127,0);
+    }
+    16%{
+        box-shadow: 0px 0px 5px  rgb(158, 158, 0);
+    }
+    25%{
+        box-shadow: 0px 0px 5px  rgb(127,255,0);
+    }
+    33%{
+        box-shadow: 0px 0px 5px  rgb(0,255,0);
+    }
+    41%{
+        box-shadow: 0px 0px 5px  rgb(0,255,127);
+    }
+    50%{
+        box-shadow: 0px 0px 5px  rgb(0,255,255);
+    }
+    58%{
+        box-shadow: 0px 0px 5px  rgb(0,127,255);
+    }
+    66%{
+        box-shadow: 0px 0px 5px  rgb(0,0,255);
+    }
+    75%{
+        box-shadow: 0px 0px 5px  rgb(127,0,255);
+    }
+    83%{
+        box-shadow: 0px 0px 5px  rgb(255,0,255);
+    }
+    91%{
+        box-shadow: 0px 0px 5px  rgb(255,0,127);
+    }
+}
+
+@keyframes rainbow_inside {
+    100%,0%{
+        color: rgb(255,0,0);
+        text-shadow: 0px 0px  2px rgb(255,0,0);
+    }
+    8%{
+        color: rgb(255,127,0);
+        text-shadow: 0px 0px  2px rgb(255,127,0);
+    }
+    16%{
+        color: rgb(255,255,0);
+        text-shadow: 0px 0px  2px rgb(158, 158, 0);
+    }
+    25%{
+        color: rgb(127,255,0);
+        text-shadow: 0px 0px  2px rgb(127,255,0);
+    }
+    33%{
+        color: rgb(0,255,0);
+        text-shadow: 0px 0px  2px rgb(0,255,0);
+    }
+    41%{
+        color: rgb(0,255,127);
+        text-shadow: 0px 0px  2px rgb(0,255,127);
+    }
+    50%{
+        color: rgb(0,255,255);
+        text-shadow: 0px 0px  2px rgb(0,255,255);
+    }
+    58%{
+        color: rgb(0,127,255);
+        text-shadow: 0px 0px  2px rgb(0,127,255);
+    }
+    66%{
+        color: rgb(0,0,255);
+        text-shadow: 0px 0px  2px rgb(0,0,255);
+    }
+    75%{
+        color: rgb(127,0,255);
+        text-shadow: 0px 0px  2px rgb(127,0,255);
+    }
+    83%{
+        color: rgb(255,0,255);
+        text-shadow: 0px 0px  2px rgb(255,0,255);
+    }
+    91%{
+        color: rgb(255,0,127);
+        text-shadow: 0px 0px  2px rgb(255,0,127);
+    }
+}

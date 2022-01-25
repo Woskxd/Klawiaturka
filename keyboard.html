@@ -1,0 +1,200 @@
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <link rel="stylesheet" href="look.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        jQuery(function ($) {
+            var sound = new Audio('sound.mp3') 
+
+            var press_color = '#bbbbbbd1'
+
+            function press(){
+               $(this).css({
+                   'boxShadow': '0px 3px 0px 2px' + press_color,
+                   'top': '3px'
+               })
+               sound.play();
+            }            
+            function unpress(){
+               $(this).css({
+                   'boxShadow': '0px 3px 0px 5px' + press_color,
+                   'top': '0px'
+               })
+            }
+            $('.button').mousedown(press);
+            $('.button').mouseup(unpress);
+
+            $('#black').click(changeTheme);
+            $('#white').click(changeTheme);
+            
+            function changeTheme() {
+                if($(this).attr('id') == 'black') {
+                    press_color = '#212121';
+
+                    $('.button').css({
+                        'background': '#2e2e2e',
+                        'boxShadow': '0px 3px 0px 5px #212121'
+                    })
+                    $('#keyboard').css({
+                        'background': '#1c1c1c',
+                        'boxShadow': '3px 3px 0px 3px #121212'
+                    })
+                    $('#container').css({
+                        'background': 'linear-gradient(90deg, rgba(20,26,34,1) 0%, rgba(0,0,0,1) 82%)'
+                    })
+
+                    $('#black-white').css({
+                        'background': '#141a22'
+                    })
+
+                    $('#signature').css({
+                        'color': 'white'
+                    })
+                }
+                else {
+                    press_color = '#bbbbbbd1';
+
+                    $('.button').css({
+                        'background': '#fafafa',
+                        'boxShadow': '0px 3px 0px 5px #bbbbbbd1'
+                    })
+                    $('#keyboard').css({
+                        'background': '#e0e0e0',
+                        'boxShadow': '3px 3px 0px 3px #b3b3b3'
+                    })
+                    $('#container').css({
+                        'background': 'radial-gradient(circle, rgba(245,233,208,1) 0%, rgba(226,209,185,1) 100%)'
+                    })
+
+                    $('#black-white').css({
+                        'background': '#e0c8a5'
+                    })
+
+                    $('#signature').css({
+                        'color': 'black'
+                    })
+                }
+            }
+        })
+    </script>
+</head>
+
+<body>
+    <div id="container">
+        <div id="black-white">
+            <div id="black">
+
+            </div>            
+            <div id="white">
+
+            </div>
+        </div>
+        <div id="keyboard">
+            <div class="button">ESC</div>
+            <div style="margin-left: 52px;" class="button">F1</div>
+            <div class="button">F2</div>
+            <div class="button">F3</div>
+            <div class="button">F4</div>
+            <div style="margin-left: 28px;" class="button">F5</div>
+            <div class="button">F6</div>
+            <div class="button">F7</div>
+            <div class="button">F8</div>
+            <div style="margin-left: 28px;" class="button">F9</div>
+            <div class="button">F10</div>
+            <div class="button">F11</div>
+            <div class="button">F12</div>
+            <div style="margin-left: 25px;" class="button">PrtSc</div>
+            <div class="button">ScLk</div>
+            <div class="button">Pause</div>
+
+            <div class="button">`~</div>
+            <div class="button">1 !</div>
+            <div class="button">2 @</div>
+            <div class="button">3 #</div>
+            <div class="button">4 $</div>
+            <div class="button">5 %</div>
+            <div class="button">6 ^</div>
+            <div class="button">7 &</div>
+            <div class="button">8 *</div>
+            <div class="button">9 (</div>
+            <div class="button">0 )</div>
+            <div class="button">- _</div>
+            <div class="button">= +</div>
+            <div style="width: 83px;" class="button">&#x2190</div>
+            <div style="margin-left: 25px;" class="button">Ins</div>
+            <div class="button">Home</div>
+            <div class="button">PgUp</div>
+
+            <div style="width: 60px;" class="button">Tab</div>
+            <div class="button">Q</div>
+            <div class="button">W</div>
+            <div class="button">E</div>
+            <div class="button">R</div>
+            <div class="button">T</div>
+            <div class="button">Y</div>
+            <div class="button">U</div>
+            <div class="button">I</div>
+            <div class="button">O</div>
+            <div class="button">P</div>
+            <div class="button">[ {</div>
+            <div class="button">] }</div>
+            <div style="width: 60px;" class="button">\ |</div>
+            <div style="margin-left: 25px;" class="button">Del</div>
+            <div class="button">End</div>
+            <div class="button">PgDn</div>
+
+            <div style="width: 70px;" class="button">CapsLk</div>
+            <div class="button">A</div>
+            <div class="button">S</div>
+            <div class="button">D</div>
+            <div class="button">F</div>
+            <div class="button">G</div>
+            <div class="button">H</div>
+            <div class="button">J</div>
+            <div class="button">K</div>
+            <div class="button">L</div>
+            <div class="button">; :</div>
+            <div class="button">' "</div>
+            <div style="width: 98px;" class="button">&#8629</div>
+            <div style="margin-left: 25px; opacity: 0; pointer-events: none;" class="button"></div>
+            <div style="opacity: 0; pointer-events: none;" class="button"></div>
+            <div style="opacity: 0; pointer-events: none;" class="button"></div>
+
+            <div style="width: 100px;" class="button">Shift</div>
+            <div class="button">Z</div>
+            <div class="button">X</div>
+            <div class="button">C</div>
+            <div class="button">V</div>
+            <div class="button">B</div>
+            <div class="button">N</div>
+            <div class="button">M</div>
+            <div class="button">, <</div> <div class="button">. ></div>
+            <div class="button">/ ?</div>
+            <div style="width: 117px;" class="button">Shift</div>
+            <div style="margin-left: 22px; opacity: 0; pointer-events: none;" class="button"></div>
+            <div class="button">&#8593</div>
+            <div style="opacity: 0; pointer-events: none;" class="button"></div>
+
+            <div style="width: 47px;" class="button">Ctrl</div>
+            <div style="width: 47px;" class="button">&#x2616</div>
+            <div style="width: 47px;" class="button">Alt</div>
+            <div style="width: 305px;" class="button"></div>
+            <div style="width: 47px;" class="button">Alt</div>
+            <div style="width: 47px;" class="button">Fn</div>
+            <div style="width: 47px;" class="button">&#x2616</div>
+            <div style="width: 47px;" class="button">Ctrl</div>
+            <div style="margin-left: 25px;" class="button">&#8592</div>
+            <div class="button">&#8595</div>
+            <div class="button">&#8594</div>
+        </div>
+    </div>
+    <div id="signature">
+        Krystian Tomczyk 2021
+    </div>
+</body>
+
+</html>
